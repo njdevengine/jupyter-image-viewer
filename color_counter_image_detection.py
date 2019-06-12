@@ -11,6 +11,13 @@ for i in files:
     dictionary[number] = colors
     print(n)
     n+=1
+    
+import pandas as pd
+keys = list(dictionary.keys())
+vals = list(dictionary.values())
+data = list(zip(keys,vals))
+df_color = pd.DataFrame(data,columns=["num","color_count"])
+df_color.to_csv("color.csv")
 
 #identifies default avatars for twitter profile images(they use 184 colors)
 
@@ -22,3 +29,5 @@ for i in dictionary:
         display(Image(filename='/ml/outfile'+str(i)+'.png'))
         n+=1
 print(n)
+
+
