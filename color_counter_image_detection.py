@@ -29,5 +29,3 @@ for i in dictionary:
         display(Image(filename='/ml/outfile'+str(i)+'.png'))
         n+=1
 print(n)
-
-
