@@ -30,3 +30,7 @@ for i in list(df["profile_image_url"]):
     n+=1
     print(n,face_recognition.face_locations(detection))
 df.to_csv('update.csv')
+
+clean = df[df.face_detection !=999.0]
+clean = clean[clean.color_number != 184]
+clean.to_csv("clean_data.csv")
