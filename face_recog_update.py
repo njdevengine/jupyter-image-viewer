@@ -34,3 +34,5 @@ df.to_csv('update.csv')
 clean = df[df.face_detection !=999.0]
 clean = clean[clean.color_number != 184]
 clean.to_csv("clean_data.csv")
+
+logos = clean[(clean.color_number <=10000) & (clean.face_detection != 1)]
