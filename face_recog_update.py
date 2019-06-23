@@ -36,3 +36,18 @@ clean = clean[clean.color_number != 184]
 clean.to_csv("clean_data.csv")
 
 logos = clean[(clean.color_number <=10000) & (clean.face_detection != 1)]
+
+###view your images in jupyter###
+from IPython.display import Image, display
+import urllib.request
+import urllib
+
+n=0
+for imageName in list(logos["profile_image_url"]):
+    print(imageName)
+    try:
+        urllib.request.urlretrieve(imageName,'ml/test.png')
+        display(Image(filename='ml/test.png'))
+        n+=1
+    except:
+        print('error')
