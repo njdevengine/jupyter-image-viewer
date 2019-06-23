@@ -6,8 +6,6 @@ import pandas as pd
 df = pd.read_csv('update.csv')
 print('got df')
 
-# for i in list(df["profile_image_url"]):
-#     print(i)
 import os
 try:
     os.mkdir("ml")
