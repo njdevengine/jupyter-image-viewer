@@ -1,4 +1,5 @@
 from nltk import word_tokenize
+#N-GRAMS are n length word phrases that appear in a text
 
 #### CONVERTING A CSV TO TXT
 # import csv
