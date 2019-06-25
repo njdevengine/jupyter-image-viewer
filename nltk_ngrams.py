@@ -1,5 +1,7 @@
 from nltk import word_tokenize
 #N-GRAMS are n length word phrases that appear in a text
+#finding common n-grams in a text can help find keyword phrases that appear more frequently in a text
+#this can help characterize texts
 
 #### CONVERTING A CSV TO TXT
 # import csv
