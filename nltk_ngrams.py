@@ -12,8 +12,18 @@ from nltk import word_tokenize
 #         [ my_output_file.write(" ".join(row)+'\n') for row in csv.reader(my_input_file)]
 #     my_output_file.close()
 
-with open('tweets.txt','r',encoding="latin1") as myfile:
-    string=myfile.read().replace('\n', '')
+import nltk
+import string
+from nltk import word_tokenize
+import pandas as pd
+
+nltk.download('punkt')
+
+with open('logos.txt','r',encoding="latin1") as myfile:
+    my_string=myfile.read().replace('\n', '')
+
+exclude = set(string.punctuation)
+string = ''.join(ch for ch in my_string if ch not in exclude)
 
 tokens = word_tokenize(string)
 text = nltk.Text(tokens)
@@ -21,7 +31,9 @@ text = nltk.Text(tokens)
 #array is the tuple of ngrams, array2 is the count of appearances, array1 is joined tuples, array 1 & 2 can be zipped into a dataframe
 array =[]
 array2 =[]
-bgs = nltk.ngrams(tokens,6)
+
+### length of n-grams is second argument to nltk.ngrams(tokens,length_goes_here)
+bgs = nltk.ngrams(tokens,2)
 fdist = nltk.FreqDist(bgs)
 for k,v in fdist.items():
     if v >10:
